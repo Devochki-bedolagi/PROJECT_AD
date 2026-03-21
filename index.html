@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Music Party — Найди свое мероприятие</title>
+  <meta name="description" content="Мобильное приложение для поиска локальных музыкальных мероприятий">
+  
+  <!-- шрифты -->
+  <link href="https://fonts.cdnfonts.com/css/bowler" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- для анимации курсора -->
+  <canvas id="cursorTrail"></canvas>
+
+  <!-- шапка -->
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo">
+        <img src="images/лого.png" alt="лого">
+      </div>
+
+      <nav class="social-links">
+        <a href="#" class="social-link" aria-label="ВКонтакте">
+          <img src="images/вк1.png" alt="вк1" class="icon-default">
+          <img src="images/вк2.png" alt="вк2" class="icon-hover">
+        </a>
+        <a href="#" class="social-link" aria-label="Telegram">
+          <img src="images/тг1.png" alt="тг1" class="icon-default">
+          <img src="images/тг2.png" alt="тг2" class="icon-hover">
+        </a>
+      </nav>
+
+      <button class="btn btn-primary">Скачать</button>
+    </div>
+  </header>
+
+  <!-- 1 блок -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Мобильное приложение для поиска
+          <span class="gradient-text">локальных мероприятий</span>
+        </h1>
+        <p class="hero-description">
+          Находи концерты, вечеринки и музыкальные события рядом с тобой. Не пропускай любимых артистов!
+        </p>
+        <div class="hero-buttons">
+          <button class="btn btn-large btn-primary">
+            <img src="images/эпл1.png" alt="эпл1" class="btn-icon icon-default">
+            <img src="images/эпл2.png" alt="эпл2" class="btn-icon icon-hover">
+            App Store
+          </button>
+          <button class="btn btn-large btn-secondary">
+            <img src="images/гугл1.png" alt="гугл1" class="btn-icon icon-default">
+            <img src="images/гугл2.png" alt="гугл2" class="btn-icon icon-hover">
+            Google Play
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <img src="images/1.png" alt="скрин1" class="hero-image">
+        <div class="hero-glow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- блок "что внутри" -->
+  <section class="features">
+    <div class="container">
+      <h2 class="section-title">Что внутри?</h2>
+      <p class="section-description">Все музыкальные события твоего города в одном месте</p>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="images/муз.png" alt="муз" class="feature-icon-img">
+          </div>
+          <p class="feature-text">Афиша музыкальных мероприятий</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="images/люди.png" alt="люди" class="feature-icon-img">
+          </div>
+          <p class="feature-text">Большая подборка концертов, в том числе локальных артистов</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="images/кален.png" alt="кален" class="feature-icon-img">
+          </div>
+          <p class="feature-text">Анонсы концертов зарубежных артистов, которые редко приезжают в Россию</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="images/поиск.png" alt="поиск" class="feature-icon-img">
+          </div>
+          <p class="feature-text">Удобный поиск по городам, жанрам, площадкам, исполнителям</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <img src="images/карта.png" alt="карта" class="feature-icon-img">
+          </div>
+          <p class="feature-text">Карта, на которой легко найти ближайшие мероприятия</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- блок с бонусом -->
+  <section class="earn">
+    <div class="container">
+      <div class="earn-content">
+        <div class="earn-text">
+          <span class="badge badge-secondary">Бонусная программа</span>
+          <h2 class="section-title-left">Зарабатывайте на посещениях</h2>
+          <p class="earn-description">Зарабатывайте на посещениях ресторанов и заказе доставки.</p>
+          <div class="earn-highlight">
+            <span class="earn-percent">+10%</span>
+            <span class="earn-description-inline">от каждого заказа на ваш счёт!</span>
+          </div>
+        </div>
+        <div class="earn-image-wrapper">
+          <img src="images/2.png" alt="скрин2" class="earn-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- блок для организатора -->
+  <section class="organizers">
+    <div class="container organizers-content">
+      <div class="organizers-image-wrapper">
+        <img src="images/3.png" alt="скрин3" class="organizers-image">
+      </div>
+
+      <div class="organizers-text">
+        <span class="badge badge-primary">Для организатора</span>
+        <h2 class="section-title-left">Добавь своё мероприятие</h2>
+        <ul class="check-list">
+          <li class="check-item">
+            <img src="images/галочка фиол.png" alt="галочка1" class="check-icon">
+            <span class="check-text">Ты сам предлагаешь мероприятие через наш сайт, после проверки модератором анонс появится в приложении</span>
+          </li>
+          <li class="check-item">
+            <img src="images/галочка фиол.png" alt="галочка1" class="check-icon">
+            <span class="check-text">Стоимость размещения бесплатна</span>
+          </li>
+          <li class="check-item">
+            <img src="images/галочка фиол.png" alt="галочка1" class="check-icon">
+            <span class="check-text">Ты можешь добавить своё мероприятие уже сейчас</span>
+          </li>
+        </ul>
+        <button class="btn btn-large btn-primary">Добавить мероприятие</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- блок для польз -->
+  <section class="users">
+    <div class="container users-content">
+      <div class="users-text">
+        <span class="badge badge-secondary">Для пользователя</span>
+        <h2 class="section-title-left">Не пропусти ничего важного</h2>
+        <ul class="check-list">
+          <li class="check-item">
+            <img src="images/галочка оранж.png" alt="галочка2" class="check-icon">
+            <span class="check-text">Не пропустит концерт любимого исполнителя</span>
+          </li>
+          <li class="check-item">
+            <img src="images/галочка оранж.png" alt="галочка2" class="check-icon">
+            <span class="check-text">Сможет открыть для себя новые музыкальные мероприятия</span>
+          </li>
+          <li class="check-item">
+            <img src="images/галочка оранж.png" alt="галочка2" class="check-icon">
+            <span class="check-text">Откроет для себя новых, набирающих популярность артистов</span>
+          </li>
+          <li class="check-item">
+            <img src="images/галочка оранж.png" alt="галочка2" class="check-icon">
+            <span class="check-text">Сможет запланировать поход на мероприятие заранее</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="users-image-wrapper">
+        <img src="images/4.png" alt="скрин4" class="users-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- блок с выпад текстом -->
+  <section class="faq">
+    <div class="container">
+      <h2 class="section-title-center">Часто задаваемые вопросы</h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-question-text">Приложение платное?</span>
+            <img src="images/список.png" alt="▼" class="faq-icon">
+          </button>
+          <div class="faq-answer">
+            <p class="faq-answer-text">Приложение бесплатное, без рекламы и прочих уловок.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-question-text">Чем вы отличаетесь от любой другой афиши?</span>
+            <img src="images/список.png" alt="▼" class="faq-icon">
+          </button>
+          <div class="faq-answer">
+            <p class="faq-answer-text">Local Music Party — приложение для всех артистов. Мы не знаем слова «популярность», никого не выделяем и не продвигаем, поэтому ты можешь узнать полную информацию обо всех музыкальных мероприятиях твоего города.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-question-text">Как добавляются мероприятия в приложение?</span>
+            <img src="images/список.png" alt="▼" class="faq-icon">
+          </button>
+          <div class="faq-answer">
+            <p class="faq-answer-text">Ты сам предлагаешь мероприятия через наш сайт. Модераторы проверяют информацию и публикуют.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-question-text">Я хочу опубликовать анонс о своем мероприятии, что делать?</span>
+            <img src="images/список.png" alt="▼" class="faq-icon">
+          </button>
+          <div class="faq-answer">
+            <p class="faq-answer-text">Перейди в раздел «Для организатора» и добавь свое мероприятие через форму на сайте. После проверки модератором анонс появится в приложении.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- блок скачивания -->
+  <section class="download">
+    <div class="container">
+      <h2 class="section-title-center">Скачай приложение прямо сейчас</h2>
+      <p class="section-description-center">Доступно для iOS и Android</p>
+      <div class="download-buttons">
+        <button class="btn btn-large btn-primary">
+          <img src="images/эпл1.png" alt="эпл1" class="btn-icon icon-default">
+          <img src="images/эпл2.png" alt="эпл2" class="btn-icon icon-hover">
+          App Store
+        </button>
+        <button class="btn btn-large btn-secondary">
+          <img src="images/гугл1.png" alt="гугл1" class="btn-icon icon-default">
+          <img src="images/гугл2.png" alt="гугл2" class="btn-icon icon-hover">
+          Google Play
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- форма для записи -->
+  <section class="contact">
+    <div class="container">
+      <div class="contact-wrapper">
+        <h2 class="section-title-center">Обратная связь</h2>
+        <p class="section-description-center">Напиши нам на почту</p>
+
+        <form class="contact-form" id="contactForm">
+          <input
+            type="text"
+            placeholder="Ваше имя"
+            class="form-input"
+          />
+          <input
+            type="email"
+            placeholder="Ваша почта"
+            class="form-input"
+          />
+          <textarea
+            placeholder="Ваш комментарий"
+            rows="4"
+            class="form-textarea"
+          ></textarea>
+          <div class="form-checkbox-wrapper">
+            <input
+              type="checkbox"
+              id="privacy"
+              required
+              class="form-checkbox"
+            />
+            <label for="privacy" class="form-checkbox-label">
+              Я согласен на обработку персональных данных и принимаю политику конфиденциальности
+            </label>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-large btn-primary btn-full"
+          >
+            Отправить
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- футер -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <img src="images/лого.png" alt="лого">
+            <span class="logo-text">Local Music Party</span>
+          </div>
+          <p class="footer-description">
+            Мобильное приложение для поиска локальных музыкальных мероприятий
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4 class="footer-title">Скачать</h4>
+          <div class="footer-links-list">
+            <a href="#" class="footer-link">App Store</a>
+            <a href="#" class="footer-link">Google Play</a>
+          </div>
+        </div>
+
+        <div class="footer-social">
+          <h4 class="footer-title">Социальные сети</h4>
+          <div class="social-links">
+            <a href="#" class="social-link social-link-large" aria-label="ВКонтакте">
+              <img src="images/вк1.png" alt="вк1" class="icon-default">
+              <img src="images/вк2.png" alt="вк2" class="icon-hover">
+            </a>
+            <a href="#" class="social-link social-link-large" aria-label="Telegram">
+              <img src="images/тг1.png" alt="тг1" class="icon-default">
+              <img src="images/тг2.png" alt="тг2" class="icon-hover">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        © 2026 Local Music Party. Все права защищены.
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
