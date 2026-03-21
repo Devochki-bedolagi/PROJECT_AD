@@ -1,0 +1,19 @@
+# Зависимости
+node_modules/
+
+# Файлы с ключами и секретами
+.env
+.env.local
+*-config.js
+
+# Логи
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Личные заметки и инструкции
+*_instruction.md
+*_setup.md
+notes/
