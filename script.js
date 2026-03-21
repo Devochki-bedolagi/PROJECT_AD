@@ -80,11 +80,16 @@ faqItems.forEach((item) => {
   });
 });
 
-/* форма */
+/* форма + отправка в Supabase */
 const contactForm = document.getElementById('contactForm');
 
+/* инициализация Supabase через CDN */
+const SUPABASE_URL = 'https://zfxujjrfphkgqpilnrec.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpmeHVqanJmcGhrZ3FwaWxucmVjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxMjg4OTYsImV4cCI6MjA4OTcwNDg5Nn0.Csi1noG5_3s8hFoQiEV-ZhqlGL56-6jxENnPlP1_O8E';
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
 if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const nameInput = contactForm.querySelector('input[type="text"]');
@@ -97,16 +102,40 @@ if (contactForm) {
     const comment = commentInput.value.trim();
     const privacyChecked = privacyCheckbox.checked;
 
+    /* проверка согласия */
     if (!privacyChecked) {
       alert('Пожалуйста, подтвердите согласие на обработку персональных данных');
       return;
     }
 
-    if (name && email) {
+    /* проверка заполненности полей */
+    if (!name || !email) {
+      alert('Пожалуйста, заполните все поля');
+      return;
+    }
+
+    /* отправка в Supabase */
+    try {
+      const { data, error } = await supabase
+        .from('feedback_messages')
+        .insert({
+          name: name,
+          email: email,
+          message: comment,
+          consent_given: true,
+          status: 'new'
+        });
+
+      if (error) {
+        throw error;
+      }
+
       alert(`Спасибо, ${name}! Ваше сообщение отправлено.`);
       contactForm.reset();
-    } else {
-      alert('Пожалуйста, заполните все поля');
+      console.log('Сообщение сохранено в БД:', data);
+    } catch (err) {
+      console.error('Ошибка отправки:', err);
+      alert('Произошла ошибка при отправке. Попробуйте позже.');
     }
   });
 }
