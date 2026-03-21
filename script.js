@@ -86,7 +86,7 @@ const contactForm = document.getElementById('contactForm');
 /* инициализация Supabase через CDN */
 const SUPABASE_URL = 'https://zfxujjrfphkgqpilnrec.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpmeHVqanJmcGhrZ3FwaWxucmVjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxMjg4OTYsImV4cCI6MjA4OTcwNDg5Nn0.Csi1noG5_3s8hFoQiEV-ZhqlGL56-6jxENnPlP1_O8E';
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
@@ -116,7 +116,7 @@ if (contactForm) {
 
     /* отправка в Supabase */
     try {
-      const { data, error } = await supabase
+      const { data, error } = await supabaseClient
         .from('feedback_messages')
         .insert({
           name: name,
