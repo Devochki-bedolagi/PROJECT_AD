@@ -86,7 +86,13 @@ const contactForm = document.getElementById('contactForm');
 /* инициализация Supabase через CDN */
 const SUPABASE_URL = 'https://zfxujjrfphkgqpilnrec.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpmeHVqanJmcGhrZ3FwaWxucmVjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQxMjg4OTYsImV4cCI6MjA4OTcwNDg5Nn0.Csi1noG5_3s8hFoQiEV-ZhqlGL56-6jxENnPlP1_O8E';
+
+console.log('Supabase CDN загружен:', typeof window.supabase);
+console.log('Создаю клиент...');
+
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+console.log('Supabase клиент создан:', supabaseClient);
 
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
