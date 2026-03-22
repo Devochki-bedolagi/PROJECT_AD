@@ -50,7 +50,7 @@ PROJECT_AD/
 ## 🔗 Ссылки
 
 - [Демо на Vercel](https://project-ad-git-yulia-yulias-projects-b100268f.vercel.app)
-- [Репозиторий на GitHub](https://github.com/KorsunovaYul/PROJECT_AD)
+- [Репозиторий на GitHub](https://github.com/Devochki-bedolagi/PROJECT_AD)
 
 ---
 
