@@ -49,8 +49,8 @@ PROJECT_AD/
 
 ## 🔗 Ссылки
 
-- [Демо на Vercel](https://project-ad-git-yulia-yulias-projects-b100268f.vercel.app)
-- [Репозиторий на GitHub](https://github.com/Devochki-bedolagi/PROJECT_AD)
+- [Сайт на Vercel](https://projectad-seven.vercel.app/)
+- [Репозиторий на GitHub](https://github.com/saharnie-sheikeri/PROJECT_AD.git)
 
 ---
 
